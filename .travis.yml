@@ -3,7 +3,7 @@ services:
  - docker
 
 before_install:
-  - docker build -t banabasave/docker-react -f dockerfile.dev .
+  - docker build -t banabasave/docker-react -f Dockerfile.dev .
 
 script:
- - docker run banabasave/docker-react npm run test -- --coverage
+ - docker run -e CI=true banabasave/docker-react npm run test
